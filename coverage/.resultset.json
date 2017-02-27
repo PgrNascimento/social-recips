@@ -1,0 +1,54 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/alan/workspace/campus-code/social-recipes/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/alan/workspace/campus-code/social-recipes/app/models/cuisine.rb": [
+        1,
+        null
+      ],
+      "/home/alan/workspace/campus-code/social-recipes/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/alan/workspace/campus-code/social-recipes/app/controllers/cuisines_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/alan/workspace/campus-code/social-recipes/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/alan/workspace/campus-code/social-recipes/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1488210050
+  }
+}
