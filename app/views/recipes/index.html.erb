@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-sm-1 col-md-3">
+		<%@recipes.each do |recipe|%>
+			<div class="recipe">
+				<h2><%=recipe.name%></h2>
+				<p>Dificuldade: <%=recipe.difficult_level%></p>
+				<p>Serve <%=recipe.serves%> pessoas</p>
+				<p>Tempo de preparo: <%=recipe.cook_time%></p>
+			</div>
+		<%end%>
+	</div>
+</div>
