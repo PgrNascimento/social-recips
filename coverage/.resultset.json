@@ -5,7 +5,8 @@
         1,
         null
       ],
-      "/home/alan/workspace/campus-code/social-recipes/app/models/food_type.rb": [
+      "/home/alan/workspace/campus-code/social-recipes/app/models/recipe.rb": [
+        1,
         1,
         1,
         null
@@ -16,6 +17,7 @@
         null
       ],
       "/home/alan/workspace/campus-code/social-recipes/app/models/cuisine.rb": [
+        1,
         1,
         1,
         null
@@ -51,6 +53,12 @@
         1,
         null
       ],
+      "/home/alan/workspace/campus-code/social-recipes/app/models/food_type.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/alan/workspace/campus-code/social-recipes/app/controllers/food_types_controller.rb": [
         1,
         1,
@@ -76,6 +84,33 @@
         null,
         null
       ],
+      "/home/alan/workspace/campus-code/social-recipes/app/controllers/recipes_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
       "/home/alan/workspace/campus-code/social-recipes/app/mailers/application_mailer.rb": [
         0,
         0,
@@ -83,6 +118,6 @@
         0
       ]
     },
-    "timestamp": 1488211820
+    "timestamp": 1488219401
   }
 }
