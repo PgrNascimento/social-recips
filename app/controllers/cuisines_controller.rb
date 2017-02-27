@@ -11,6 +11,9 @@ class CuisinesController < ApplicationController
 		@cuisine = Cuisine.new cuisine_params
 		if @cuisine.save
 			redirect_to @cuisine
+		else
+			flash[:error] = "Não foi possível criar a cozinha"
+			render :new
 		end
 	end
 

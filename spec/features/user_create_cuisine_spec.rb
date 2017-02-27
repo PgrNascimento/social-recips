@@ -12,4 +12,12 @@ feature 'User creates cuisine' do
 
 		expect(page).to have_content "Cozinha #{cuisine.name}"
 	end
+
+	scenario 'And should fill all fields' do
+		visit new_cuisine_path
+
+		click_on 'Criar Cozinha'
+
+		expect(page).to have_content "Não foi possível criar a cozinha"
+	end
 end
