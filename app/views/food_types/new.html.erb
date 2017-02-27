@@ -1,0 +1,7 @@
+<% unless flash[:error].nil? %>
+	<div class="alert alert-danger"><%=flash[:error]%></div>
+<%end%>
+<%=simple_form_for @food_type do |f| %>
+	<%=f.input :name, label: "Nome", error: "Não pode ser vazio"%>
+	<%=f.submit 'Criar Tipo de Comida'%>
+<%end%>

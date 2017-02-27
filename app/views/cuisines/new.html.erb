@@ -1,4 +1,6 @@
-<div class="alert alert-danger" role="alert"><%=flash[:error]%></div>
+<%unless flash[:error].nil? %>
+	<div class="alert alert-danger" role="alert"><%=flash[:error]%></div>
+<%end%>
 <%= simple_form_for @cuisine do |f|%>
 	<%=f.input :name, label: 'Nome', error: "Campo obrigatório" %>
 	<%=f.submit 'Criar Cozinha' %>
