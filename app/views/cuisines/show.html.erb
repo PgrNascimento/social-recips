@@ -2,3 +2,7 @@
 	<dt>Cozinha</dt>
 	<dd><%=@cuisine.name%></dd>
 </dl>
+
+<%@cuisine.recipes.each do |recipe|%>
+	<p>	<%= recipe.name%> </p>
+<%end%>

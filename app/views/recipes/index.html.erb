@@ -9,4 +9,13 @@
 			</div>
 		<%end%>
 	</div>
+	<div class="col-sm-1 col-md-2">
+		<div class="cozinhas">
+			<%@cuisines.each do |cuisine|%>
+				<div class="cozinha">
+					<%=link_to cuisine.name, cuisine %>
+				</div>
+			<%end%>
+		</div>
+	</div>
 </div>
