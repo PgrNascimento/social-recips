@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-02-27T18:51:28-03:00">2017-02-27T18:51:28-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-02-28T21:53:55-03:00">2017-02-28T21:53:55-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.15
+         1.17
        </span>
     </span> hits/line)
   </h2>
@@ -87,7 +87,7 @@
         <td>16</td>
         <td>16</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -163,7 +163,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.29
+         1.32
        </span>
     </span> hits/line)
   </h2>
@@ -225,7 +225,7 @@
         <td>16</td>
         <td>16</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.4</td>
       </tr>
       
     </tbody>
@@ -868,10 +868,10 @@
           <code class="ruby">	def index</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="3">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="3">
+          <span class="hits">3</span>
           
-          <code class="ruby">		@recipes = Recipe.all</code>
+          <code class="ruby">		@recipes = Recipe.order(created_at: :desc).limit(20)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
