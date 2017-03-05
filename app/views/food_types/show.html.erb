@@ -2,3 +2,10 @@
 	<dt>Tipo de Comida</dt>
 	<dd><%=@food_type.name%></dd>
 </dl>
+
+<%if @food_type.recipes.empty?%>
+	<p>Nenhuma receita disponível</p>
+<%end%>
+<%@food_type.recipes.each do |recipe|%>
+	<p>	<%= recipe.name%> </p>
+<%end%>

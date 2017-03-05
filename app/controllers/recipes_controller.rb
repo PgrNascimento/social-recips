@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 	def index
 		@recipes = Recipe.order(created_at: :desc).limit(20)
 		@cuisines = Cuisine.all
+		@food_types = FoodType.all
 	end
 	def show
 		@recipe = Recipe.find params[:id]
@@ -12,6 +13,7 @@ class RecipesController < ApplicationController
 	end
 
 	def search
+		@food_types = FoodType.all
 		@cuisines = Cuisine.all
 		@recipes = Recipe.where("name like ?", "%#{params[:recipe_search]}%")
 		render :index

@@ -1,27 +1,27 @@
 require 'rails_helper'
 
-feature 'User view recipes by Cuisine' do
+feature 'User view recipes by Food Type' do
 	scenario 'successfully' do
 		
-		cuisine = create(:cuisine, name: "Brasileira")
-		recipes = create_pair(:recipe, cuisine: cuisine)
+		food_type = create(:food_type, name: "Sobremesa")
+		recipes = create_pair(:recipe, food_type: food_type)
 
 		visit recipes_path
 
-		click_link cuisine.name
+		click_link food_type.name
 		
-		expect(page).to have_content(cuisine.name)
+		expect(page).to have_content(food_type.name)
 		recipes.each do |recipe| 
 			expect(page).to have_content(recipe.name)			
 		end
 	end
 
 	scenario 'view a friendly message' do
-  	cuisine = create(:cuisine, name: "Brasileira")
+  	food_type = create(:food_type, name: "Sobremesa")
     
     visit recipes_path
 
-    click_on cuisine.name
+    click_on food_type.name
 
     expect(page).to have_content 'Nenhuma receita disponível'
   end

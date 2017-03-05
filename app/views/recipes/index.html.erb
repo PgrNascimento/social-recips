@@ -23,5 +23,12 @@
 				</div>
 			<%end%>
 		</div>
+		<div class="tipos">
+			<%@food_types.each do |food_type| %>
+				<div class="tipo">
+					<%=link_to food_type.name, food_type %>
+				</div>
+			<%end%>
+		</div>
 	</div>
 </div>

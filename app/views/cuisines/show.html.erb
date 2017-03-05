@@ -3,6 +3,9 @@
 	<dd><%=@cuisine.name%></dd>
 </dl>
 
+<%if @cuisine.recipes.empty?%>
+	<p>Nenhuma receita disponível</p>
+<%end%>
 <%@cuisine.recipes.each do |recipe|%>
 	<p>	<%= recipe.name%> </p>
 <%end%>
