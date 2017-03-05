@@ -11,6 +11,7 @@ feature 'user view recipes' do
 		expect(page).to have_content("Dificuldade: #{recipe.difficult_level}")
 		expect(page).to have_content("Serve #{recipe.serves} pessoas")
 		expect(page).to have_content("Tempo de preparo: #{recipe.cook_time}")
+		expect(page).to have_xpath("//img[contains(@src, 'brigadeirao')]")
 	end
 
 	scenario 'and view a list of recipes' do
@@ -23,11 +24,13 @@ feature 'user view recipes' do
 		expect(page).to have_content("Dificuldade: #{recipe.difficult_level}")
 		expect(page).to have_content("Serve #{recipe.serves} pessoas")
 		expect(page).to have_content("Tempo de preparo: #{recipe.cook_time}")
-
+		expect(page).to have_xpath("//img[contains(@src, 'brigadeirao')]")
+		
 		expect(page).to have_css("h2", text: another_recipe.name)
 		expect(page).to have_content("Dificuldade: #{another_recipe.difficult_level}")
 		expect(page).to have_content("Serve #{another_recipe.serves} pessoas")
 		expect(page).to have_content("Tempo de preparo: #{another_recipe.cook_time}")
+		expect(page).to have_xpath("//img[contains(@src, 'brigadeirao')]")
 	end
 
 	scenario 'and view last 20 recipes' do		
@@ -42,11 +45,13 @@ feature 'user view recipes' do
 			expect(page).to have_content("Dificuldade: #{recipe.difficult_level}")
 			expect(page).to have_content("Serve #{recipe.serves} pessoas")
 			expect(page).to have_content("Tempo de preparo: #{recipe.cook_time}")
+			expect(page).to have_xpath("//img[contains(@src, 'brigadeirao')]")
 		end		
 
 		expect(page).not_to have_content(first_recipe.name)
 		expect(page).not_to have_content("Dificuldade: #{first_recipe.difficult_level}")
 		expect(page).not_to have_content("Serve #{first_recipe.serves} pessoas")
 		expect(page).not_to have_content("Tempo de preparo: #{first_recipe.cook_time}")
+		expect(page).to have_xpath("//img[contains(@src, 'brigadeirao')]")
 	end
 end

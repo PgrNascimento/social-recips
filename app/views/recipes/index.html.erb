@@ -2,6 +2,9 @@
 	<div class="col-sm-1 col-md-3">
 		<%@recipes.each do |recipe|%>
 			<div class="recipe">
+				<%unless recipe.picture.file.nil? %>
+					<%= image_tag recipe.picture.url, alt: "Foto da receita #{recipe.name}" %>
+				<%end%>
 				<h2><%=recipe.name%></h2>
 				<p>Dificuldade: <%=recipe.difficult_level%></p>
 				<p>Serve <%=recipe.serves%> pessoas</p>

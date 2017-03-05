@@ -1,5 +1,5 @@
 <%unless @recipe.picture.file.nil? %>
-	<%= image_tag @recipe.picture.url, alt: "Foto do #{@recipe.picture_identifier}" %>
+	<%= image_tag @recipe.picture.url, alt: "Foto da receita #{@recipe.name}" %>
 <%end%>
 <dl>
 	<dt>Nome da receita</dt>
