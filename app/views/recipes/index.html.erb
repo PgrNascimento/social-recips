@@ -1,5 +1,8 @@
 <div class="row">
 	<div class="col-sm-1 col-md-3">
+		<%if @recipes.empty?%>
+			<p>Nenhuma receita encontrada</p>
+		<% end %>
 		<%@recipes.each do |recipe|%>
 			<div class="recipe">
 				<%unless recipe.picture.file.nil? %>

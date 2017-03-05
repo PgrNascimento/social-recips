@@ -16,6 +16,13 @@
   </head>
 
   <body>
+    <header>
+      <%= form_tag("/recipes/search", method: "post") do %>
+        <%= label_tag(:recipe_search, "Buscar por receitas:") %>
+        <%= text_field_tag(:recipe_search) %>
+        <%= submit_tag("Buscar") %>
+      <%end%>
+    </header>
   	<div class="container">
     	<%= yield %>
     </div>

@@ -11,7 +11,13 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new
 	end
 
-	def create
+	def search
+		@cuisines = Cuisine.all
+		@recipes = Recipe.where("name like ?", "%#{params[:recipe_search]}%")
+		render :index
+	end
+
+	def create		
 		@recipe = Recipe.new recipe_params
 		if @recipe.save
 			redirect_to @recipe
