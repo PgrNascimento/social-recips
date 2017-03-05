@@ -22,3 +22,7 @@
 
 #ignore simplecove
 coverage
+
+#ignore recipe uploads
+
+/public/uploads/recipe
