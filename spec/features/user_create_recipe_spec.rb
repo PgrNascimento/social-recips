@@ -4,14 +4,8 @@ feature 'User creates recipes' do
 	scenario 'successfully' do
 		cuisine = Cuisine.create(name: "Paulista")		
 		food_type = FoodType.create(name: "Sobremesa")
-		recipe = Recipe.new(name: "Brigadeirão",
-			cuisine: cuisine,
-			food_type: food_type,
-			serves: 4,
-			cook_time: "40 minutos",
-			difficult_level: 'Fácil',
-			ingredients: '1 lata de leite condensado; 1 lata de creme de leite; 1 xícara de chocolate',
-			instructions: 'Coloque tudo no liquidificador, bata, coloque numa forma untada e leve a geladeira por 3 horas')
+		
+		recipe = Recipe.create(cuisine: cuisine, food_type: food_type)
 		
 		visit new_recipe_path
 
@@ -23,9 +17,11 @@ feature 'User creates recipes' do
 		fill_in 'Nível de dificuldade', with: recipe.difficult_level
 		fill_in 'Ingredientes', with: recipe.ingredients
 		fill_in 'Passo a passo', with: recipe.instructions
+		attach_file('Foto', "spec/fixtures/brigadeirao.png")
 
 		click_on 'Criar Receita'
 
+		expect(page).to have_xpath("//img[contains(@src, 'brigadeirao')]")
 		expect(page).to have_content "Nome da receita #{recipe.name}"
 		expect(page).to have_content "Cozinha #{cuisine.name}"
 		expect(page).to have_content "Tipo de Comida #{food_type.name}"
