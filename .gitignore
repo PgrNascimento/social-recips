@@ -26,3 +26,4 @@ coverage
 #ignore recipe uploads
 
 /public/uploads/recipe
+/public/uploads/tmp
