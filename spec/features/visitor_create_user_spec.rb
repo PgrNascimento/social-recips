@@ -24,7 +24,7 @@ feature 'User creates user' do
 		expect(page).to have_content "Facebook #{user.twitter}"
 	end
 
-	scenario 'And fill correct password' do
+	scenario 'And fill incorrect password' do
 		user = create(:user)
 
 		visit new_user_path

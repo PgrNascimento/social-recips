@@ -1,0 +1,12 @@
+<%unless flash[:error].nil? %>
+	<div class="alert alert-danger" role="alert"><%=flash[:error]%></div>
+<%end%>
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :mail, "E-mail" %>
+  <%= f.email_field :mail, class: 'form-control' %>
+
+  <%= f.label :password, "Senha" %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <%= f.submit "Entrar", class: "btn btn-primary" %>
+<% end %>
