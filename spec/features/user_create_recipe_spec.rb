@@ -2,11 +2,11 @@ require 'rails_helper'
 
 feature 'User creates recipes' do
 	scenario 'successfully' do
-		cuisine = Cuisine.create(name: "Paulista")		
+		cuisine = Cuisine.create(name: "Paulista")
 		food_type = FoodType.create(name: "Sobremesa")
-		
+
 		recipe = Recipe.create(cuisine: cuisine, food_type: food_type)
-		
+
 		visit new_recipe_path
 
 		fill_in 'Nome', with: recipe.name
@@ -17,7 +17,7 @@ feature 'User creates recipes' do
 		fill_in 'Nível de dificuldade', with: recipe.difficult_level
 		fill_in 'Ingredientes', with: recipe.ingredients
 		fill_in 'Passo a passo', with: recipe.instructions
-		attach_file('Foto', "spec/fixtures/brigadeirao.png")
+		attach_file('Foto', "spec/support/fixtures/brigadeirao.png")
 
 		click_on 'Criar Receita'
 
