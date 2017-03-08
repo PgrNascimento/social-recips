@@ -16,17 +16,39 @@
   </head>
 
   <body>
-    <header>
-      <%= form_tag("/recipes/search", method: "post") do %>
-        <%= label_tag(:recipe_search, "Buscar por receitas:") %>
-        <%= text_field_tag(:recipe_search) %>
-        <%= submit_tag("Buscar") %>
-      <%end%>
-      <% if logged_in? %>
-        <%= link_to "Log out", logout_path, method: "delete" %>
-      <% else %>
-        <%= link_to "Log in", login_path %>
-      <% end %>
+    <header class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%=link_to "Social Recipes", root_path, class: "navbar-brand" %>
+        </div>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= form_tag("/recipes/search", method: "post", class: "navbar-form", role: "search") do %>
+                <div class="form-group">
+                  <%= label_tag( "recipe_search", "Buscar por receitas:") %>
+                  <%= text_field_tag :recipe_search, '', class: "form-control", placeholder: "Buscar por receitas" %>
+                </div>
+
+                <%= submit_tag("Buscar", class: "btn btn-default") %>
+              <%end%>
+            </li>
+            <li>
+              <%= link_to "Home", root_path %>
+            </li>
+            <li>
+              <%= link_to "Receitas", recipes_path %>
+            </li>
+            <li>
+              <% if logged_in? %>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              <% else %>
+                <%= link_to "Log in", login_path %>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   	<div class="container">
     	<%= yield %>

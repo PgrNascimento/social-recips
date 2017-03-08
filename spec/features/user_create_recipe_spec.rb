@@ -7,7 +7,9 @@ feature 'User creates recipes' do
 
 		recipe = Recipe.create(cuisine: cuisine, food_type: food_type)
 
-		visit new_recipe_path
+		visit recipes_path
+
+		click_on "Nova Receita"
 
 		fill_in 'Nome', with: recipe.name
 		select cuisine.name, from: 'Cozinha'

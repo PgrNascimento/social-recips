@@ -1,8 +1,8 @@
 <div class="row">
+	<%if @recipes.empty?%>
+		<div class="alert alert-warning text-center">Nenhuma receita encontrada</div>
+	<% end %>
 	<div class="col-sm-1 col-md-3">
-		<%if @recipes.empty?%>
-			<p>Nenhuma receita encontrada</p>
-		<% end %>
 		<%@recipes.each do |recipe|%>
 			<div class="recipe">
 				<%unless recipe.picture.file.nil? %>
@@ -31,4 +31,6 @@
 			<%end%>
 		</div>
 	</div>
+
+	<%= link_to "Nova Receita", new_recipe_path, class: "btn btn-primary" %>
 </div>

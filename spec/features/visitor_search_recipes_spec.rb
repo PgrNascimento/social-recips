@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User search recipes' do 
+feature 'Visitor search recipes' do 
 	scenario 'sucessfully' do
 		recipe = create(:recipe, name: "Bife a rolê")
 		another_recipe = create(:recipe, name: "Bolo de Cenoura")
@@ -8,7 +8,7 @@ feature 'User search recipes' do
 		visit recipes_path
 
 		fill_in "Buscar por receitas", with: "Bife"
-		
+
 		click_on "Buscar"
 
 		expect(page).not_to have_content(another_recipe.name)
@@ -23,7 +23,7 @@ feature 'User search recipes' do
 		visit new_recipe_path
 
 		fill_in "Buscar por receitas", with: "Bife"
-		
+
 		click_on "Buscar"
 
 		expect(page).to have_content("Nenhuma receita encontrada")

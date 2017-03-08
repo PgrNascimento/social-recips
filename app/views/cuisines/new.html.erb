@@ -1,7 +1,14 @@
 <%unless flash[:error].nil? %>
 	<div class="alert alert-danger" role="alert"><%=flash[:error]%></div>
 <%end%>
-<%= simple_form_for @cuisine do |f|%>
+<%= simple_form_for @cuisine, html: { class: "form-horizontal"},
+wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  } do |f|%>
 	<%=f.input :name, label: 'Nome', error: "Campo obrigatório" %>
 	<%=f.submit 'Criar Cozinha' %>
 <%end%>
