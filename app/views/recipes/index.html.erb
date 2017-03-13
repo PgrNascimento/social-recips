@@ -2,11 +2,11 @@
 	<%if @recipes.empty?%>
 		<div class="alert alert-warning text-center">Nenhuma receita encontrada</div>
 	<% end %>
-	<div class="col-sm-1 col-md-3">
+	<section class="col-sm-12 col-md-10 recipes">
 		<%@recipes.each do |recipe|%>
-			<div class="recipe">
+			<div class="col-sm-12 col-md-5 recipe">
 				<%unless recipe.picture.file.nil? %>
-					<%= image_tag recipe.picture.url, alt: "Foto da receita #{recipe.name}" %>
+					<%= image_tag recipe.picture.url, alt: "Foto da receita #{recipe.name}", class: "img-responsive" %>
 				<%end%>
 				<h2><%=recipe.name%></h2>
 				<p>Dificuldade: <%=recipe.difficult_level%></p>
@@ -14,23 +14,25 @@
 				<p>Tempo de preparo: <%=recipe.cook_time%></p>
 			</div>
 		<%end%>
-	</div>
-	<div class="col-sm-1 col-md-2">
+	</section>
+	<aside class="col-sm-12 col-md-2">
 		<div class="cozinhas">
+			<h4>Cozinhas</h4>
 			<%@cuisines.each do |cuisine|%>
 				<div class="cozinha">
 					<%=link_to cuisine.name, cuisine %>
 				</div>
 			<%end%>
 		</div>
+		<hr>
 		<div class="tipos">
+			<h4>Tipos de Comida</h4>
 			<%@food_types.each do |food_type| %>
 				<div class="tipo">
 					<%=link_to food_type.name, food_type %>
 				</div>
 			<%end%>
 		</div>
+		<%= link_to "Nova Receita", new_recipe_path, class: "btn btn-primary", id: "btn-new-recipe" %>
 	</div>
-
-	<%= link_to "Nova Receita", new_recipe_path, class: "btn btn-primary" %>
 </div>

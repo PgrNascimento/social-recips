@@ -3,9 +3,9 @@
 <%end%>
 <%= simple_form_for @recipe do |f| %>
 	<%=f.input :name, label: "Nome", error: "Campo obrigatório"%>
-	
+
 	<%=f.association :cuisine, label_method: :name, value_method: :id, label: "Cozinha", prompt: "Selecione uma cozinha" %>
-	
+
 	<%=f.association :food_type, label_method: :name, value_method: :id, label: "Tipo de Comida", prompt: "Selecione o tipo da comida" %>
 
 	<%=f.input :serves, label: "Quantas pessoas serve", error: "Campo obrigatório" %>
@@ -20,5 +20,5 @@
 
 	<%=f.input :picture, as: :file, label: "Foto" %>
 
-	<%=f.submit "Criar Receita"%>
+	<%=f.submit "Criar Receita", class: "btn btn-primary"%>
 <%end%>

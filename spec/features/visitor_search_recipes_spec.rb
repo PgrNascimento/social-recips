@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-feature 'Visitor search recipes' do 
+feature 'Visitor search recipes' do
 	scenario 'sucessfully' do
 		recipe = create(:recipe, name: "Bife a rolê")
 		another_recipe = create(:recipe, name: "Bolo de Cenoura")
 
 		visit recipes_path
 
-		fill_in "Buscar por receitas", with: "Bife"
+		fill_in :recipe_search, with: "Bife"
 
 		click_on "Buscar"
 

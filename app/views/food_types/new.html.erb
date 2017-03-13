@@ -3,5 +3,5 @@
 <%end%>
 <%=simple_form_for @food_type do |f| %>
 	<%=f.input :name, label: "Nome", error: "Não pode ser vazio"%>
-	<%=f.submit 'Criar Tipo de Comida'%>
+	<%=f.submit 'Criar Tipo de Comida', class: "btn btn-primary"%>
 <%end%>
