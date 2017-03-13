@@ -1,15 +1,4 @@
 <%unless flash[:error].nil? %>
 	<div class="alert alert-danger" role="alert"><%=flash[:error]%></div>
 <%end%>
-<%=simple_form_for @user do |f|%>
-	<%=f.input :name, label: "Nome", error: "Campo Obrigatório"%>
-	<%=f.input :city, label: "Cidade", error: "Campo Obrigatório"%>
-	<%=f.input :mail, label: "E-mail", error: "Campo Obrigatório"%>
-	<%=f.input :facebook, label: "Facebook", required: false%>
-	<%=f.input :twitter, label: "Twitter", required: false%>
-
-	<%=f.input :password, label: "Senha", error: "Campo Obrigatório"%>
-	<%=f.input :confirm_password, label: "Confirme sua senha", error: "Campo Obrigatório"%>
-
-	<%=f.submit "Criar Cadastro" %>
-	<%end%>
+<%= render partial: 'form', locals: {name_button: "Criar Cadastro"} %>

@@ -7,7 +7,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= form_tag("/recipes/search", method: "post", class: "navbar-form", role: "search") do %>
-            <div class="form-group">              
+            <div class="form-group">
               <%= text_field_tag :recipe_search, '', class: "form-control", placeholder: "Buscar por receitas" %>
             </div>
 
@@ -20,11 +20,13 @@
         <li>
           <%= link_to "Receitas", recipes_path %>
         </li>
-        <li>
-          <% if logged_in? %>
-            <%= link_to "Log out", logout_path, method: "delete" %>
+        <% if logged_in? %>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          <li><%= link_to "Minha Conta", user_path(current_user)%></li>
           <% else %>
+          <li>
             <%= link_to "Log in", login_path %>
+          </li>
           <% end %>
         </li>
       </ul>
