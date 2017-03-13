@@ -1,0 +1,23 @@
+<%= simple_form_for @recipe do |f| %>
+	<%=f.input :name, label: "Nome", error: "Campo obrigatório"%>
+
+	<%=f.association :cuisine, label_method: :name, value_method: :id, label: "Cozinha", prompt: "Selecione uma cozinha" %>
+
+	<%=f.association :food_type, label_method: :name, value_method: :id, label: "Tipo de Comida", prompt: "Selecione o tipo da comida" %>
+
+	<%=f.input :serves, label: "Quantas pessoas serve", error: "Campo obrigatório" %>
+
+	<%=f.input :cook_time, label: "Tempo de preparo", error: "Campo obrigatório"%>
+
+	<%=f.input :difficult_level, label: "Nível de dificuldade", error: "Campo obrigatório"%>
+
+	<%=f.input :ingredients, label: "Ingredientes", error: "Campo obrigatório"%>
+
+	<%=f.input :instructions, label: "Passo a passo", error: "Campo obrigatório"%>
+
+	<%=f.input :picture, as: :file, label: "Foto" %>
+
+	<%=f.submit name_button, class: "btn btn-primary"%>
+
+  <%=link_to "Voltar", root_path, class: "btn btn-default" %>
+<%end%>
